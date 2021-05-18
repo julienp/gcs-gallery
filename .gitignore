@@ -3,3 +3,6 @@ public
 node_modules
 cypress/videos/
 cypress/screenshots/
+
+.env.development
+sa.json
