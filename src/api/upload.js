@@ -6,7 +6,10 @@ const GOOGLE_SA_PRIVATE_KEY = process.env.GOOGLE_SA_PRIVATE_KEY
 const BUCKET = process.env.BUCKET
 
 async function handler(req, res) {
-  console.log("Hi!", { process_env: process.env, process_env: process["env"] })
+  const env = JSON.stringify(process.env)
+  const env2 = JSON.stringify(process[`env`])
+  console.log({ env })
+  console.log({ env2 })
 
   const storage = new Storage({
     projectId: GOOGLE_PROJECT_ID,
