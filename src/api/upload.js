@@ -11,6 +11,11 @@ async function handler(req, res) {
   console.log({ env })
   console.log({ env2 })
 
+  console.log({
+    GOOGLE_PROJECT_ID,
+    BUCKET,
+  })
+
   const storage = new Storage({
     projectId: GOOGLE_PROJECT_ID,
     credentials: {
