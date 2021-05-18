@@ -1,8 +1,11 @@
 const { Storage } = require("@google-cloud/storage")
 
+const LOCAL = process.env.LOCAL
 const GOOGLE_PROJECT_ID = process.env.GOOGLE_PROJECT_ID
 const GOOGLE_SA_CLIENT_EMAIL = process.env.GOOGLE_SA_CLIENT_EMAIL
-const GOOGLE_SA_PRIVATE_KEY = process.env.GOOGLE_SA_PRIVATE_KEY
+const GOOGLE_SA_PRIVATE_KEY = LOCAL
+  ? process.env.GOOGLE_SA_PRIVATE_KEY
+  : JSON.parse(process.env.GOOGLE_SA_PRIVATE_KEY)
 const BUCKET = process.env.BUCKET
 
 console.log({
