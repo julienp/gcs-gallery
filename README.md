@@ -1,8 +1,4 @@
-# Gatsbygram
-
-https://gatsbygram.gatsbyjs.org/
-
-Built with Gatsby 2.0 as a demo of Gatsby's new built-in image processing
-capabilities.
-
-To read more about this example, check out the [Gatsbygram Case Study](https://www.gatsbyjs.com/blog/gatsbygram-case-study/)
+gsutil mb gs://gcs-gallery
+gcloud iam service-accounts create gcs-gallery --project=astral-archive-247908
+gsutil iam ch serviceAccount:gcs-gallery@astral-archive-247908.iam.gserviceaccount.com:roles/storage.admin gs://gcs-gallery
+gcloud iam service-accounts keys create sa.json --iam-account=gcs-gallery@astral-archive-247908.iam.gserviceaccount.com
