@@ -6,13 +6,10 @@ const GOOGLE_SA_PRIVATE_KEY = process.env.GOOGLE_SA_PRIVATE_KEY
 const BUCKET = process.env.BUCKET
 
 async function handler(req, res) {
-  const env = JSON.stringify(process.env)
-  const env2 = JSON.stringify(process[`env`])
-  console.log({ env })
-  console.log({ env2 })
-
   console.log({
     GOOGLE_PROJECT_ID,
+    GOOGLE_SA_CLIENT_EMAIL,
+    GOOGLE_SA_PRIVATE_KEY: GOOGLE_SA_PRIVATE_KEY.slice(0, 20),
     BUCKET,
   })
 
@@ -25,8 +22,10 @@ async function handler(req, res) {
       private_key: GOOGLE_SA_PRIVATE_KEY,
     },
   })
+  console.log(`storage objcet created`)
 
   const bucket = storage.bucket(BUCKET)
+  console.log(`bucket objcet created`)
   const [files] = await storage.bucket(bucket).getFiles()
   console.log({ files })
   res.json({ files })
