@@ -7,7 +7,7 @@
   "dependencies": {
     "@google-cloud/storage": "^5.8.5",
     "core-js": "^2.6.11",
-    "gatsby": "next",
+    "gatsby": "^3.5.0",
     "gatsby-core-utils": "next",
     "gatsby-image": "next",
     "gatsby-plugin-glamor": "next",
