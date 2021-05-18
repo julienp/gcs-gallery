@@ -1,6 +1,9 @@
 const path = require(`path`)
 
 module.exports = {
+  flags: {
+    FUNCTIONS: true,
+  },
   siteMetadata: {
     title: `Gatsbygram`,
   },
