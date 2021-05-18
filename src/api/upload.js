@@ -26,7 +26,7 @@ async function handler(req, res) {
 
   const bucket = storage.bucket(BUCKET)
   console.log(`bucket objcet created`)
-  const [files] = bucket.getFiles()
+  const [files] = await bucket.getFiles()
   console.log({ files })
   res.json({ files })
 }
