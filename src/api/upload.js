@@ -5,6 +5,13 @@ const GOOGLE_SA_CLIENT_EMAIL = process.env.GOOGLE_SA_CLIENT_EMAIL
 const GOOGLE_SA_PRIVATE_KEY = process.env.GOOGLE_SA_PRIVATE_KEY
 const BUCKET = process.env.BUCKET
 
+console.log({
+  GOOGLE_PROJECT_ID,
+  GOOGLE_SA_CLIENT_EMAIL,
+  GOOGLE_SA_PRIVATE_KEY: GOOGLE_SA_PRIVATE_KEY.slice(0, 20),
+  BUCKET,
+})
+
 const storage = new Storage({
   projectId: GOOGLE_PROJECT_ID,
   credentials: {
@@ -18,6 +25,7 @@ const storage = new Storage({
 const bucket = storage.bucket(BUCKET)
 
 async function handler(req, res) {
+  console.log(`in the function`)
   const [files] = await bucket.getFiles()
   console.log({ files })
   res.json({ files })
