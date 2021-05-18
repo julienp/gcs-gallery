@@ -8,7 +8,10 @@ const BUCKET = process.env.BUCKET
 console.log({
   GOOGLE_PROJECT_ID,
   GOOGLE_SA_CLIENT_EMAIL,
-  GOOGLE_SA_PRIVATE_KEY: GOOGLE_SA_PRIVATE_KEY.slice(0, 20),
+  GOOGLE_SA_PRIVATE_KEY:
+    GOOGLE_SA_PRIVATE_KEY.slice(0, 30) +
+    `...` +
+    GOOGLE_SA_PRIVATE_KEY.slice(-30),
   BUCKET,
 })
 
